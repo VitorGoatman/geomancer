@@ -212,7 +212,7 @@ All information about the figures is sourced from
 [The Art and Practice of Geomancy](https://www.amazon.com/Art-Practice-Geomancy-Divination-Renaissance/dp/1578634318) 
 by author John Micheal Greer. If you found the information inside
  this program to be useful consider buying the book and supporting 
- the aithor.
+ the author.
 
 ## License
 
