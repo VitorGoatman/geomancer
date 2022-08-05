@@ -43,7 +43,7 @@ proc chart() =
   var
     ms,ds,ns: figSet 
     lw,rw,ju: Figure
-  if args["--build"] or args["-b"]:
+  if args["--build"]:
     ms = [
       matchFig($args["<m1>"]).fig,
       matchFig($args["<m2>"]).fig,
