@@ -53,16 +53,17 @@ proc chart() =
     ns = getNieces(ms,ds) 
     rw = sumFigures(ns[0],ns[1])
     lw = sumFigures(ns[2],ns[3])
-    ju = sumFigures(rw,lw)
+    ju = sumFigures(lw,rw)
+    echo fmt shieldmsg
   else:
     let reading = geomancy()
     ms = reading.ms
     ds = reading.ds
     ns = reading.ns
     lw = reading.lw
-    rw = reading.lw
+    rw = reading.rw
     ju = reading.ju
-  echo fmt shieldmsg
+    echo fmt shieldmsg
   if args["house"]:
     echo fmt housemsg 
 
