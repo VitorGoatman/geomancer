@@ -1,6 +1,6 @@
 # Package
 
-version       = "1.0"
+version       = "1.0.1"
 author        = "VitorGoatman"
 description   = "A library and program for getting geomancy charts and figures."
 license       = "Unlicense"
