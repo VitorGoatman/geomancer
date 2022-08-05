@@ -8,7 +8,8 @@ any two figures together.
 ## Install
 
 You can install this geomancer by downloading 
-a [pre-compiled binary]() or by running the 
+a [pre-compiled binary](https://github.com/VitorGoatman/geomancer/releases/)
+or by running the 
 following command if you have Nim and Nimble 
 installed:
 
@@ -22,7 +23,7 @@ You can get a random geomancy reading with
 the command `geomancer chart` which will give 
 you a shield chart like this one
 
-```shell
+```
 $ geomancer chart
 Shield Chart
 +---Daughters---+----Mothers----+
@@ -113,7 +114,7 @@ the four mothers. You will need to wrap
 Caput/Cauda Draconis and Fortuna Major/Minor 
 in quotes.
 
-```shell
+```
 $ geomancer chart -b "Caput Draconis" Via Puer Albus
 Shield Chart
 +---Daughters---+----Mothers----+
@@ -142,7 +143,7 @@ Shield Chart
 Alternatively, you can use a minimalist notation 
 for each figure using the `.` and `:` characters.
 
-```shell
+```
 $ geomancer chart --build .:.. :.:. :..: :::.
 Shield Chart
 +---Daughters---+----Mothers----+
@@ -171,7 +172,7 @@ Shield Chart
 You can combine any two figures together with the `sum` 
 command.
 
-```shell
+```
 $ geomancer sum ::.: ..:.
 Combination of 1: Albus and 2: Puer
 
@@ -191,7 +192,7 @@ Combination of 1: Albus and 2: Puer
 Finally, you get basic information on any figure with 
 the `info` command.
 
-```shell
+```
 $ geomancer info Carcer
 Figure Information: Carcer
 
@@ -209,4 +210,4 @@ Houses: Carcer is strengthened in the tenth house and weakened in the fourth
 
 ## License
 
-This program is licensed under the Unlicense license.
+This program is unlicensed under the Unlicense unlicense.
