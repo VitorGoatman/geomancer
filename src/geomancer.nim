@@ -1,5 +1,5 @@
 import geomancerpkg/[geomancy, figures, msgs]
-import std/[strformat]
+import std/[strformat,wordwrap]
 import docopt
   
 const
@@ -26,7 +26,6 @@ Options:
                 about a figure.
 """
 
-
 let args = docopt doc
 
 proc matchFig(fig:string): FigData =
@@ -40,30 +39,24 @@ proc matchFig(fig:string): FigData =
     quit("Unknown figure: "&fig, 1)
 
 proc chart() =
-  var
-    ms,ds,ns: figSet 
-    lw,rw,ju: Figure
+  var reading:Reading
   if args["--build"]:
-    ms = [
+    let m = [
       matchFig($args["<m1>"]).fig,
       matchFig($args["<m2>"]).fig,
       matchFig($args["<m3>"]).fig,
       matchFig($args["<m4>"]).fig]
-    ds = getDaughters ms
-    ns = getNieces(ms,ds) 
-    rw = sumFigures(ns[0],ns[1])
-    lw = sumFigures(ns[2],ns[3])
-    ju = sumFigures(lw,rw)
-    echo fmt shieldmsg
+    reading = geomancy m
   else:
-    let reading = geomancy()
+    reading = geomancy()
+  let
     ms = reading.ms
     ds = reading.ds
     ns = reading.ns
     lw = reading.lw
     rw = reading.rw
     ju = reading.ju
-    echo fmt shieldmsg
+  echo fmt shieldmsg
   if args["house"]:
     echo fmt housemsg 
 
@@ -86,4 +79,6 @@ when isMainModule:
   if args["sum"]: sum($args["<figure1>"],$args["<figure2>"])
   if args["info"]:
     let f = matchFig $args["<name>"]
-    echo fmt infomsg
+    echo infomsg.fmt
+    echo "Commentary: ",f.commentary.wrapWords(),"\n"
+    echo "Divinatory meaning: ",f.divination.wrapWords()

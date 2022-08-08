@@ -82,7 +82,4 @@ Image: {f.img}
 Colors: {f.color}
 Keyword: {f.keyword}
 Quality: {f.quality}
-
-Divinatory meaning: {f.divination}
-Commentary: {f.commentary}
 """
