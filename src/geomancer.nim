@@ -7,22 +7,22 @@ const
 Geomancer
 
 Usage:
-  geomancer chart [house] [(-b | --build) <m1> <m2> <m3> <m4>]
-  geomancer sum <figure1> <figure2>
-  geomancer info <name>
-  geomancer (-h | --help)
+  geomancer (-c | --chart) [(-h | --house)] [(-b | --build) <m1> <m2> <m3> <m4>]
+  geomancer (-s | --sum) <figure1> <figure2>
+  geomancer (-i | --info) <name>
+  geomancer (-? | --help)
 
 Options:
-  -h --help     Show this screen.
+  -? --help     Show this screen.
   --version     Show version.
-  chart         Generates a shield chart 
+  -c --chart    Generates a shield chart 
                 of the reading.
-  house         Generates a house chart 
+  -h --house    Generates a house chart 
                 of the reading.
   -b --build    Input the four mothers and
                 build a chart from them.
-  sum           Combines two figures.
-  info          Returns basic information 
+  -s --sum      Combines two figures.
+  -i --info     Returns basic information 
                 about a figure.
 """
 
@@ -57,7 +57,7 @@ proc chart() =
     rw = reading.rw
     ju = reading.ju
   echo fmt shieldmsg
-  if args["house"]:
+  if args["--house"]:
     echo fmt housemsg 
 
 proc sum(name1,name2:string)=
@@ -75,9 +75,9 @@ proc sum(name1,name2:string)=
   echo fmt summsg
 
 when isMainModule:
-  if args["chart"]: chart()
-  if args["sum"]: sum($args["<figure1>"],$args["<figure2>"])
-  if args["info"]:
+  if args["--chart"]: chart()
+  if args["--sum"]: sum($args["<figure1>"],$args["<figure2>"])
+  if args["--info"]:
     let f = matchFig $args["<name>"]
     echo infomsg.fmt
     echo "Commentary: ",f.commentary.wrapWords(),"\n"

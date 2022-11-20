@@ -20,11 +20,11 @@ nimble install geomancer
 ## Usage
 
 You can get a random geomancy reading with 
-the command `geomancer chart` which will give 
+the command `geomancer -c/--chart` which will give 
 you a shield chart like this one
 
 ```
-$ geomancer chart
+$ geomancer --chart
 Shield Chart
 +---Daughters---+----Mothers----+
 |• •| • |• •|• •| • |• •|• •|• •|
@@ -50,11 +50,11 @@ Shield Chart
 ```
 
 You can get an additional house chart for 
-more detailed readings by adding the `house` 
+more detailed readings by adding the `-h/--house` 
 option.
 
 ```
-$ geomancer chart house
+$ geomancer -ch
 Shield Chart
 +---Daughters---+----Mothers----+
 | • |• •| • | • |• •| • | • | • |
@@ -115,7 +115,7 @@ Caput/Cauda Draconis and Fortuna Major/Minor
 in quotes.
 
 ```
-$ geomancer chart -b "Caput Draconis" Via Puer Albus
+$ geomancer -cb "Caput Draconis" Via Puer Albus
 Shield Chart
 +---Daughters---+----Mothers----+
 |• •| • | • | • |• •| • | • | • |
@@ -144,7 +144,7 @@ Alternatively, you can use a minimalist notation
 for each figure using the `.` and `:` characters.
 
 ```
-$ geomancer chart --build .:.. :.:. :..: :::.
+$ geomancer -c --build .:.. :.:. :..: :::.
 Shield Chart
 +---Daughters---+----Mothers----+
 | • | • |• •| • |• •|• •|• •| • |
@@ -169,11 +169,11 @@ Shield Chart
 +-------------------------------+
 ```
 
-You can combine any two figures together with the `sum` 
+You can combine any two figures together with the `-s/--sum` 
 command.
 
 ```
-$ geomancer sum ::.: ..:.
+$ geomancer --sum ::.: ..:.
 Combination of 1: Albus and 2: Puer
 
  1     2
@@ -190,7 +190,7 @@ Combination of 1: Albus and 2: Puer
 ```
 
 Finally, you get basic information on any figure with 
-the `info` command.
+the `-i/--info` command.
 
 ```
 $ geomancer info Carcer
